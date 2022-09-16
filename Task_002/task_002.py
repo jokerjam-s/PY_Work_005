@@ -8,7 +8,6 @@
 import os
 import random
 
-
 # Всего конфет
 CANDIES = 2021
 # ограничение на хапание конфет
@@ -25,11 +24,20 @@ if int(input('играть с ботом (1-да)?')):
     using_bot = True
 
 while rest_candies > 0:
+    # отображение информации
     os.system('cls')
-    print(f'на столе {rest_candies} конфет, можно брать не более {CANDIES_LIMIT}')
+    print(f'на столе {rest_candies} конфет, можно взять [1 .. {CANDIES_LIMIT}]')
     print(f'ход {active_player} игрока')
-    get_candies = int(input('сколько конфет берем: '))
 
+    # забор конфет
+    if using_bot and active_player==2:
+        # играет бот
+    else:
+        get_candies = int(input('сколько конфет берем: '))
+    
+
+
+    # проверка правил, выигрыша
     if get_candies not in range(1, CANDIES_LIMIT+1):
         print('неверный ход')
         os.system('pause')
