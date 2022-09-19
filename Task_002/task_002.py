@@ -82,10 +82,7 @@ while rest_candies > 0:
     else:
         rest_candies -= get_candies
         if rest_candies > 0:
-            if active_player == 1:
-                active_player = 2
-            else:
-                active_player = 1
+            active_player = 1 if active_player == 2 else 2
         else:
             print(f'выиграл {active_player} игрок')
 
